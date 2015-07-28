@@ -31,6 +31,9 @@ header p{
 	
 	
 }
+.right{
+	float: right;
+}
 nav{
 	background-color:#CCC;
 	width:100%;
