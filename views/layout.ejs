@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Quiz</title>
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<!--font-family: 'Lobster', cursive;-->
+
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+<!--font-family: 'Open Sans Condensed', sans-serif;-->
+
+<link href="/stylesheets/estilosQUIZZ.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header>
+    <p>QUIZ: <span>EL juego de las preguntas</span></p>
+  </header>
+  <nav>
+  	<div class="contenedorNAV">
+      <div> <a href='../'>Inicio</a></div>
+      <!-- añado página en construcción.  -->
+      <div > <a href='/quizes/new'>Crear</a> </div> 
+      <!-- Ahora lo que he añadido es el exlace a index.ejs para que me renderice la lista de preguntas -->
+      <div><a href='/quizes'> Preguntas </a></div>
+      <div><a href='/autor/author'> Autoría </a></div>
+    </div>
+  </nav>
+  <section>
+
+ <% if (errors.length) { %>
+      <span id='ErrorMsgs'>
+        Corregir errores:<br/>
+        <% for (var i in errors) { %>
+           <span> <%= errors[i].message %> </span><br/>
+        <% } %>
+      </span>
+    <% } %>
+  
+  
+   <div> <%-body%> </div>
+  
+  </section>
+  <footer>
+    <p><a href="https://es.wikipedia.org/wiki/Quiz" target="new">¿Qué es un Quiz?</a></p>
+    <p id="GITHUB"><a href="https://github.com/MarisaHTML5/quizV2.0">GITHUB</a></p>
+  </footer>
+</body>
+</html>
