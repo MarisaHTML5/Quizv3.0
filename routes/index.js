@@ -46,12 +46,14 @@ router.get('/autor/construccion', quizController.construccion); //lo añado para
 router.get ('/quizes', quizController.index);
 router.get ('/quizes/:quizId(\\d+)', quizController.show);
 router.get ('/quizes/:quizId(\\d+)/answer', quizController.answer);
+
 //añadir para creación de preguntas por parte del usuario
-router.get('/quizes/new', quizController.new);
-router.post('/quizes/create', quizController.create);
-router.get('/quizes/:quizId(\\d+)/edit',  quizController.edit);
-router.put('/quizes/:quizId(\\d+)', quizController.update);
-router.delete('/quizes/:quizId(\\d+)',     quizController.destroy); //borrar preg
+
+router.get('/quizes/new', sessionController.loginRequired, quizController.new);
+router.post('/quizes/create', sessionController.loginRequired, quizController.create);
+router.get('/quizes/:quizId(\\d+)/edit', sessionController.loginRequired, quizController.edit);
+router.put('/quizes/:quizId(\\d+)', sessionController.loginRequired, quizController.update);
+router.delete('/quizes/:quizId(\\d+)', sessionController.loginRequired, quizController.destroy); //borrar preg
 
 //Gestión de comentarios: Rutas
 
