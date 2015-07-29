@@ -22,7 +22,7 @@ $RECYCLE.BIN/
 node_modules
 npm-debug.log
 quiz.sqlite
-.env
+
 
 # =========================
 # Operating System Files
